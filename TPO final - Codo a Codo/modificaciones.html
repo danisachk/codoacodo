@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Solutions</title>
+    <link rel="stylesheet" href="static/css/estilos2.css">
+    <script src="https://kit.fontawesome.com/51a3879bcb.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="static/img/logo.png" sizes="64x64">
+</head>
+<body>
+    <h1>Modificar Suscriptores</h1>
+    <div id="app">
+        <form @submit.prevent="obtenerSuscriptor">
+            <label for="dni">DNI:</label><input type="text" v-model="dni" required><br>
+            <button type="submit">Modificar Suscriptor</button><a href="menu.html">Menu principal</a>
+        </form>
+        <div v-if="mostrarDatosSuscriptor">
+            <h2>Datos del Suscriptor</h2>
+            <form @submit.prevent="guardarCambios">
+                <label for="nombreModificar">Nombre:</label><input type="text" id="nombreModificar" v-model="nombre" required><br>
+                <label for="apellidoModificar">Apellido:</label><input type="text" id="apellidoModificar" v-model="apellido" required><br>
+                <label for="mailModificar">Mail:</label><input type="text" id="mailModificar" v-model="mail" required><br>
+                <!-- Imagen actual del producto -->
+                <!-- <img v-if="imagen_url && !imagenSeleccionada" :src="'static/img/' + imagen_url" alt="Imagen del suscriptor" style="max-width: 200px;"> -->
+                <img v-if="imagen_url && !imagenSeleccionada" :src="'https://www.pythonanywhere.com/user/danisachk/files/home/danisachk/mysite/static/img/' + imagen_url" alt="Imagen del suscriptor" style="max-width: 200px;">
+                <!-- Vista previa de la nueva imagen seleccionada -->
+                <img v-if="imagenSeleccionada" :src="imagenUrlTemp" alt="Vista previa de la nueva imagen" style="max-width: 200px;">
+                <!-- Input para nueva imagen -->
+                <label for="nuevaImagen">Nueva Imagen:</label><input type="file" id="nuevaImagen" @change="seleccionarImagen"><br>
+                <label for="teleModificar">Teléfono:</label><input type="text" id="teleModificar" v-model="telefono" required><br>
+                <button type="submit">Guardar Cambios</button><a href="modificaciones.html">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="static/js/modificaciones.js"></script>
+</body>
+</html>

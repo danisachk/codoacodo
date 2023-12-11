@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Solutions</title>
+    <link rel="stylesheet" href="static/css/estilos2.css">
+    <script src="https://kit.fontawesome.com/51a3879bcb.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="static/img/logo.png" sizes="64x64">
+</head>
+<body>
+    <h1>Suscribite a nuestro newsletter!!</h1>
+    <h3>Boletín semanal de SOSTENIBILIDAD </h3>
+    <p>Recibe las últimas noticias y contenido destacado sobre prácticas ecoamigables, iniciativas sustentables y consejos para un estilo de vida más consciente, directamente en tu bandeja de entrada.</p>
+    <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
+    <form id="formulario" enctype="multipart/form-data">
+        <label for="dni">DNI:</label><input type="text" id="dni" name="dni" required><br>
+        <label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre" required><br>
+        <label for="apellido">Apellido:</label><input type="text" id="apellido" name="apellido" required><br>
+        <label for="mail">Mail:</label><input type="text" id="mail" name="mail" required><br>
+        <label for="imagenSuscriptor">Imagen del suscriptor:</label><input type="file" id="imagenSuscriptor" name="imagen">
+        <label for="telefonoSuscriptor">Telefono:</label><input type="text" id="telefonoSuscriptor" name="telefonoSuscriptor">
+        <button type="submit">Agregar Suscriptor</button><a href="index.html">Menu principal</a>
+    </form>
+
+    <script src="static/js/altas.js"></script>
+</body>
+</html>
